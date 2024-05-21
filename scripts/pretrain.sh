@@ -13,8 +13,8 @@ deepspeed imp_llava/train/train_mem.py \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path checkpoints/base/phi-2 \
     --version plain \
-    --data_path datasets/blip_laion_cc_sbu_558k.json \
-    --image_folder datasets/pretrain_images/ \
+    --data_path /home/ubuntu/LLaVA/playground/data/blip_laion_cc_sbu_558k.json \
+    --image_folder /home/ubuntu/LLaVA/playground/data/images \
     --vision_tower checkpoints/base/siglip-so400m-patch14-384 \
     --mm_projector_type mlp2x_gelu \
     --tune_mm_mlp_adapter True \
@@ -42,4 +42,4 @@ deepspeed imp_llava/train/train_mem.py \
     --gradient_checkpointing True \
     --dataloader_num_workers 4 \
     --lazy_preprocess True \
-    --report_to none
+    --report_to wandb
